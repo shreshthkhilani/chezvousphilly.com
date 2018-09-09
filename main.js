@@ -2,7 +2,9 @@ $( document ).ready(function() {
     rightDiv = '<br>';
     tweets.forEach(function(tweet) {
         tweetImg = '';
-        if ('img' in tweet) {
+        if ('twitch' in tweet) {
+            tweetImg += tweet.twitch;
+        } else if ('img' in tweet) {
             tweetImg += '<img class="card-img-top" src="' + tweet.img + '">';
         }
         tweetBody = '';
